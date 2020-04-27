@@ -1,0 +1,48 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#prev-display {
+  text-align: right;
+  height: 1em;
+  border: 1px dotted black;
+}
+
+#display-box {
+  border: 1px solid black;
+  height: 1em;
+}
+
+.inputs {
+  display: flex;
+}
+
+.clear-buttons {
+  display: flex;
+  
+}
+
+.clear {
+  flex-grow: 1;
+}
+
+.operands {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.digit {
+  flex: 1 0 33%;
+}
+
+.operations {
+  display: flex;
+  flex-direction: column;
+}
+
