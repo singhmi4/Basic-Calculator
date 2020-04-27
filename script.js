@@ -102,7 +102,12 @@ for (let i = 0; i < operators.length; i++) {
           console.log(`Current Operator is ${currentOperator}`);
 
           console.log(`Sub Result = ${subResult}`);
-          subResultDisplay.innerHTML = `${subResult} ${currentOperator}`;
+        if (currentOperator === "=") {
+            subResultDisplay.innerHTML = `${currentOperator} ${subResult} `;
+        } else {
+            subResultDisplay.innerHTML = `${subResult} ${currentOperator}`;
+        }
+          
           currentNumber = undefined;
           strCurrentNumber = "";
           currentNumberDisplay.innerHTML = "";
@@ -139,8 +144,11 @@ for (let i = 0; i < operators.length; i++) {
         
         console.log(`Current Operator is ${currentOperator}`);
 
-        console.log(`Sub Result = ${subResult}`);
-        subResultDisplay.innerHTML = `${subResult} ${currentOperator}`;
+         if (currentOperator === "=") {
+            subResultDisplay.innerHTML = `${currentOperator} ${subResult} `;
+        } else {
+            subResultDisplay.innerHTML = `${subResult} ${currentOperator}`;
+        }
       }  
 
       // if there is no number
@@ -175,4 +183,16 @@ allClear.addEventListener("click", function() {
   subResult = undefined;
   subResultDisplay.innerHTML = "";
   currentOperator = undefined;
+});
+
+// +/- button
+let sign = document.querySelector("#sign");
+
+sign.addEventListener("click", function() {
+  console.log("Sign Button Clicked");
+  if (isThereANumber) {
+    currentNumber *= -1
+    console.log(`Current Number: ${currentNumber}`);
+    currentNumberDisplay.innerHTML = `${currentNumber}`;
+  }
 });
